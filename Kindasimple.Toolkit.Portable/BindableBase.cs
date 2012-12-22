@@ -9,6 +9,7 @@ namespace Kindasimple.Toolkit
     /// </summary>
     public abstract class BindableBase : INotifyPropertyChanged
     {
+        public BindableBase() { }
         /// <summary>
         /// Multicast event for property change notifications.
         /// </summary>

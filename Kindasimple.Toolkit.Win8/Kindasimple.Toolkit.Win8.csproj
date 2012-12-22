@@ -10,7 +10,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Kindasimple.Toolkit</RootNamespace>
-    <AssemblyName>Kindasimple.Toolkit.W8</AssemblyName>
+    <AssemblyName>Kindasimple.Toolkit.Win8</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -100,6 +100,7 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Folder Include="Types\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Kindasimple.Toolkit.Shared\Converters\BooleanToVisibilityConverter.cs">
@@ -114,7 +115,11 @@
     <Compile Include="..\Kindasimple.Toolkit.Shared\Converters\NullToVisibilityConverter.cs">
       <Link>Converters\NullToVisibilityConverter.cs</Link>
     </Compile>
+    <Compile Include="..\Kindasimple.Toolkit.Shared\Storage\StorageType.cs">
+      <Link>Storage\StorageType.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Storage\FileIO.cs" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
     <VisualStudioVersion>11.0</VisualStudioVersion>
