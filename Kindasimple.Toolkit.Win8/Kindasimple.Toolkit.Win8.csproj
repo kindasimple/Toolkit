@@ -125,7 +125,19 @@
       <Link>Storage\StorageType.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Storage\FileHelper.cs" />
     <Compile Include="Storage\FileIO.cs" />
+    <Compile Include="Storage\MicrosoftStreamExtensions.cs" />
+    <Compile Include="Storage\WriteableBitmapLoadExtensions.cs" />
+    <Compile Include="Storage\WriteableBitmapSaveExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Packages\Newtonsoft.Json.4.5.11\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WriteableBitmapEx.WinRT">
+      <HintPath>..\Packages\WriteableBitmapEx.1.0.5.0\lib\NetCore45\WriteableBitmapEx.WinRT.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
     <VisualStudioVersion>11.0</VisualStudioVersion>
