@@ -8,8 +8,8 @@
     <ProjectGuid>{54283EB5-1BDA-4372-AAC7-FD66BC011BD8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Kindasimple.Toolkit.Portable</RootNamespace>
-    <AssemblyName>Kindasimple.Toolkit.Portable</AssemblyName>
+    <RootNamespace>Kindasimple.Toolkit</RootNamespace>
+    <AssemblyName>Kindasimple.Toolkit</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -36,13 +36,17 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BindableBase.cs" />
+    <Compile Include="..\Kindasimple.Toolkit.Shared\BindableBase.cs">
+      <Link>BindableBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Kindasimple.Toolkit.Shared\Storage\StorageRepository.cs">
+      <Link>Storage\StorageRepository.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Storage\StorageRepository.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(TargetDir)$(ProjectName).dll" "$(SolutionDir)Bin\$(ProjectName).dll"</PostBuildEvent>
+    <PostBuildEvent>copy /Y "$(TargetDir)$(TargetFileName)" "$(SolutionDir)Bin\Kindasimple.Toolkit\portable-wp8_win8_net45\$(TargetFileName)"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

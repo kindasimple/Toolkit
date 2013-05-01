@@ -10,7 +10,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Kindasimple.Toolkit</RootNamespace>
-    <AssemblyName>Kindasimple.Toolkit.Win8</AssemblyName>
+    <AssemblyName>Kindasimple.Toolkit</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -103,6 +103,9 @@
     <Folder Include="Types\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Kindasimple.Toolkit.Shared\BindableBase.cs">
+      <Link>BindableBase.cs</Link>
+    </Compile>
     <Compile Include="..\Kindasimple.Toolkit.Shared\Converters\BooleanToVisibilityConverter.cs">
       <Link>Converters\BooleanToVisibilityConverter.cs</Link>
     </Compile>
@@ -115,6 +118,9 @@
     <Compile Include="..\Kindasimple.Toolkit.Shared\Converters\NullToVisibilityConverter.cs">
       <Link>Converters\NullToVisibilityConverter.cs</Link>
     </Compile>
+    <Compile Include="..\Kindasimple.Toolkit.Shared\Storage\StorageRepository.cs">
+      <Link>Storage\StorageRepository.cs</Link>
+    </Compile>
     <Compile Include="..\Kindasimple.Toolkit.Shared\Storage\StorageType.cs">
       <Link>Storage\StorageType.cs</Link>
     </Compile>
@@ -126,7 +132,7 @@
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(TargetDir)$(ProjectName).dll" "$(SolutionDir)Bin\$(ProjectName).dll"</PostBuildEvent>
+    <PostBuildEvent>copy /Y "$(TargetDir)$(TargetFileName)" "$(SolutionDir)Bin\Kindasimple.Toolkit\win8\$(TargetFileName)"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

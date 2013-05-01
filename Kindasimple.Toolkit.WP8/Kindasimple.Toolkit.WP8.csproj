@@ -10,7 +10,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Kindasimple.Toolkit</RootNamespace>
-    <AssemblyName>Kindasimple.Toolkit.WP8</AssemblyName>
+    <AssemblyName>Kindasimple.Toolkit</AssemblyName>
     <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
@@ -83,6 +83,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\Kindasimple.Toolkit.Shared\BindableBase.cs">
+      <Link>BindableBase.cs</Link>
+    </Compile>
     <Compile Include="..\kindasimple.toolkit.shared\converters\BooleanToVisibilityConverter.cs">
       <Link>Converters\BooleanToVisibilityConverter.cs</Link>
     </Compile>
@@ -94,6 +97,9 @@
     </Compile>
     <Compile Include="..\kindasimple.toolkit.shared\converters\NullToVisibilityConverter.cs">
       <Link>Converters\NullToVisibilityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Kindasimple.Toolkit.Shared\Storage\StorageRepository.cs">
+      <Link>Storage\StorageRepository.cs</Link>
     </Compile>
     <Compile Include="..\Kindasimple.Toolkit.Shared\Storage\StorageType.cs">
       <Link>Storage\StorageType.cs</Link>
@@ -108,7 +114,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
   <ProjectExtensions />
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(TargetDir)$(ProjectName).dll" "$(SolutionDir)Bin\$(ProjectName).dll"</PostBuildEvent>
+    <PostBuildEvent>copy /Y "$(TargetDir)$(TargetFileName)" "$(SolutionDir)Bin\Kindasimple.Toolkit\wp8\$(TargetFileName)"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
