@@ -34,7 +34,7 @@ namespace Kindasimple.Toolkit.Storage
             try
             {
                 StorageFolder storageFolder = GetStorageFolder(fileStorage);
-                StorageFile file = await storageFolder.GetFileAsync(fileName);
+                StorageFile file = await storageFolder.CreateFileAsync(fileName, CreationCollisionOption.ReplaceExisting);
 
                 using (Stream stream = await file.OpenStreamForWriteAsync())
                 {
